@@ -4,6 +4,7 @@ import About from "@/src/components/About";
 import Features from "@/src/components/Features";
 import CTA from "@/src/components/CTA";
 import Footer from "@/src/components/Footer";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
       <About />
       <Features />
       <CTA />
+       
+      <Contact />
       <Footer />
     </>
   );

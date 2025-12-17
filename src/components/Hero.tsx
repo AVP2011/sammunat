@@ -1,32 +1,69 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import AnimatedBackground from "./AnimatedBackground";
+import FlushButton from "./FlushButton";
 
 export default function Hero() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="text-center py-28 px-6"
-    >
-      <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-        Empowering Careers <br /> Through Real-World Opportunities
-      </h1>
+    <section className="relative min-h-screen flex items-center justify-center px-6">
+      <AnimatedBackground />
 
-      <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
-        Sammunat helps students and professionals gain practical experience,
-        industry exposure, and global opportunities.
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl text-center"
+      >
+        <h1
+          className="
+            text-4xl sm:text-5xl md:text-6xl font-bold leading-tight
+            text-[var(--text-primary)]
+          "
+        >
+          Empowering Careers <br />
+          <span className="bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent">
+            Through Real-World Opportunities
+          </span>
+        </h1>
 
-      <div className="mt-8 flex justify-center gap-4">
-        <button className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition">
-          Join Now
-        </button>
-        <button className="px-6 py-3 border rounded-lg hover:bg-gray-100 transition">
-          Learn More
-        </button>
-      </div>
-    </motion.section>
+        <p
+          className="
+            mt-6 text-base sm:text-lg
+            text-[var(--text-secondary)]
+            max-w-2xl mx-auto
+          "
+        >
+          Sammunat connects students and professionals with internships,
+          mentorship, and global exposure through practical learning.
+        </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          <FlushButton
+            className="
+              px-8 py-3 rounded-xl font-medium
+              bg-gradient-to-r from-violet-500 to-blue-500
+              text-white
+              hover:scale-105 hover:shadow-lg
+              transition
+            "
+          >
+            Join Now
+          </FlushButton>
+
+          <FlushButton
+            className="
+              px-8 py-3 rounded-xl
+              border border-[var(--border)]
+              text-[var(--text-primary)]
+              hover:bg-black/5 dark:hover:bg-white/5
+              transition
+            "
+          >
+            Learn More
+          </FlushButton>
+        </div>
+      </motion.div>
+    </section>
   );
 }
